@@ -1,0 +1,575 @@
+{
+    "Environment": [
+        {
+            "name": "Get Global Environment",
+            "code": {
+                "def": "function getgenv()\n\t-> table",
+                "desc": "Returns the environment that will be applied to each script ran by Oxygen U."
+            }
+        },
+        {
+            "name": "Get Environment",
+            "code": {
+                "def": "function getrenv()\n\t-> table",
+                "desc": "Returns the roblox environment."
+            }
+        },
+        {
+            "name": "Get Registery",
+            "code": {
+                "def": "function getreg()\n\t-> table",
+                "desc": "Returns the lua registry."
+            }
+        },
+        {
+            "name": "Get Garbage Collection",
+            "code": {
+                "def": "function getgc(optional: bool)\n\t-> table",
+                "desc": "Returns a table with all gc objects. Use getgc(true) to include tables."
+            }
+        },
+        {
+            "name": "Get Instances",
+            "code": {
+                "def": "function getinstances()\n\t-> table",
+                "desc": "Returns a table with instances."
+            }
+        },
+        {
+            "name": "Get Nil Instances",
+            "code": {
+                "def": "function getnilinstances()\n\t-> table",
+                "desc": "Returns a table with instances parented to nil."
+            }
+        },
+        {
+            "name": "Get Loaded Modules",
+            "code": {
+                "def": "function getloadedmodules()\n\t-> table",
+                "desc": "Returns a table with all loaded modules currently in game."
+            }
+        },
+        {
+            "name": "Get Connections",
+            "code": {
+                "def": "function getconnections(signal: RbxScriptSignal)\n\t-> table",
+                "desc": "Returns a table with all connections to the given signal."
+            }
+        },
+        {
+            "name": " ",
+            "table": {
+                "headers": [
+                    "Code",
+                    "Description"
+                ],
+                "values": [
+                    [
+                        ".Function",
+                        "The function connected to the connection"
+                    ],
+                    [
+                        ":Enable",
+                        "Enables the connection"
+                    ],
+                    [
+                        ":Disable",
+                        "Disables the connection"
+                    ],
+                    [
+                        ":Fire",
+                        "Fires the connection"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Fire Signal",
+            "code": {
+                "def": "function firesignal(signal: RbxScriptSignal, any: ...)",
+                "desc": "Fires all signals connected to the signal. If given, the arguments will be used to call the function."
+            }
+        },
+        {
+            "name": "Fire Click Detector",
+            "code": {
+                "def": "function fireclickdetector(instance: ClickDetector, number: distance)",
+                "desc": "Fires the clickdetector. If no distance supplied it will default to 0"
+            }
+        },
+        {
+            "name": "Fire Proximity Prompt",
+            "code": {
+                "def": "function fireproximityprompt(instance: ProximityPrompt)",
+                "desc": "Fires the proximityprompt trigger."
+            }
+        },
+        {
+            "name": "Fire Touch Interest",
+            "code": {
+                "def": "function firetouchinterest(instance: totouch, instance: part, int: toggle)",
+                "desc": "Touches part with totouch."
+            }
+        },
+        {
+            "name": " ",
+            "table": {
+                "headers": [
+                    "Action",
+                    "Toggle"
+                ],
+                "values": [
+                    [
+                        "Begins the touch",
+                        0
+                    ],
+                    [
+                        "Ends the touch",
+                        1
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Set Scriptable",
+            "code": {
+                "def": "function setscriptable(instance: a1, string: property, bool: toggle)",
+                "desc": "Sets the property's scriptable state to toggle."
+            }
+        },
+        {
+            "name": "Get Hidden Property",
+            "code": {
+                "def": "function gethiddenproperty(instance: a1, string: property)\n\t-> any",
+                "desc": "Returns the value of the property that cannot be accessed through lua."
+            }
+        },
+        {
+            "name": "Set Hidden Property",
+            "code": {
+                "def": "function sethiddenproperty(instance: a1, string: property, any: value)",
+                "desc": "Sets the given property to new value."
+            }
+        },
+        {
+            "name": "Set Simulation Radius",
+            "code": {
+                "def": "function setsimulationradius(number: simulationradius)",
+                "desc": "Sets the localplayers simulation radius to given argument."
+            }
+        }
+    ],
+    "Script": [
+        {
+            "name": "Get Script Environment",
+            "code": {
+                "def": "function getsenv(localscript: a1)\n\t-> table",
+                "desc": "Returns the global environment of the given script."
+            }
+        },
+        {
+            "name": "Get Calling Script",
+            "code": {
+                "def": "function getcallingscript()\n\t-> script",
+                "desc": "Gets the script that is calling this function"
+            }
+        },
+        {
+            "name": "Get Script Closure",
+            "code": {
+                "def": "function getscriptclosure(localscript: a1)\n\t -> closure",
+                "desc": "Returns the closure from the given script, can be used to gather upvalues or constants."
+            }
+        },
+        {
+            "name": "Get Script Hash",
+            "code": {
+                "def": "function getscripthash(localscript: a1)\n\t -> string",
+                "desc": "Returns a SHA384 hash of the scripts bytecode. You can use this to detect changes of a script."
+            }
+        },
+        {
+            "name": "Get Script Bytecode",
+            "code": {
+                "def": "function getscriptbytecode(localscript: a1)\n\t -> string",
+                "desc": "Returns the bytecode of the given script. This can be used in a dissassembler."
+            }
+        }
+    ],
+    "Table": [
+        {
+            "name": "Get Raw Metatable",
+            "code": {
+                "def": "function getrawmetatable(table: a1)\n\t -> table",
+                "desc": "Returns the metatable of a1."
+            }
+        },
+        {
+            "name": "Set Raw Metatable",
+            "code": {
+                "def": "function setrawmetatable(table: a1, table: a2)",
+                "desc": "Sets the metatable of a1 to a2."
+            }
+        },
+        {
+            "name": "Set Readonly",
+            "code": {
+                "def": "function setreadonly(table: a1, bool: a2)",
+                "desc": "Sets the readonly value of a1 to a2."
+            }
+        },
+        {
+            "name": "Is Readonly",
+            "code": {
+                "def": "function isreadonly(table: a1)\n\t -> bool",
+                "desc": "Returns if a1 is readonly"
+            }
+        }
+    ],
+    "Input": [
+        {
+            "name": "Keyboard",
+            "code": [
+                {
+                    "def": "function keypress(keycode: number)",
+                    "desc": "Simulates a key press for the specified keycode."
+                },
+                {
+                    "def": "function keyrelease(keycode: number)",
+                    "desc": "Releases key on the keyboard."
+                }
+            ]
+        }
+    ],
+    "Drawing": [
+        {
+            "name": "Drawing New",
+            "code": {
+                "def": "function Drawing.new(string: type)\n\t-> userdata",
+                "desc": "Creates a new drawing object with type. Returns the object."
+            }
+        },
+        {
+            "name": "Base",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "bool",
+                        "Visible"
+                    ],
+                    [
+                        "int",
+                        "ZIndex"
+                    ],
+                    [
+                        "void",
+                        ":Remove()"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Line",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "Vector2",
+                        "From"
+                    ],
+                    [
+                        "Vector2",
+                        "To"
+                    ],
+                    [
+                        "Color3",
+                        "Color"
+                    ],
+                    [
+                        "float",
+                        "Thickness"
+                    ],
+                    [
+                        "float",
+                        "Transparency"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": " ",
+            "code": {
+                "def": "line = Drawing.new('Line');\nline.From = Vector2.new(20, 20); -- origin;\nline.To = Vector2.new(50, 50); -- destination\nline.Color = Color3.new(.33, .66, .99);\nline.Thickness = 1;\nline.Transparency = 0.9;",
+                "desc": " "
+            }
+        },
+        {
+            "name": "Text",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "string",
+                        "Text"
+                    ],
+                    [
+                        "Vector2",
+                        "Position"
+                    ],
+                    [
+                        "float",
+                        "Size"
+                    ],
+                    [
+                        "Color3",
+                        "Color"
+                    ],
+                    [
+                        "bool",
+                        "Center"
+                    ],
+                    [
+                        "bool",
+                        "Outline"
+                    ],
+                    [
+                        "float",
+                        "Transparency"
+                    ],
+                    [
+                        "Vector2",
+                        "TextBounds[readonly]"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": " ",
+            "code": {
+                "def": "text = Drawing.new('Text');\ntext.Text = 'OxygenU';\ntext.Color = Color3.new(1, 1, 1); -- white text\ntext.OutlineColor = Color3.new(0, 0, 0); -- black outline\ntext.Center = true; -- center text\ntext.Outline = true;\ntext.Position = Vector2.new(100, 100);\ntext.Size = 20; -- font size\ntext.Font = Drawing.Fonts.Monospace; -- 'UI', 'System', 'Plex', 'Monospace'\ntext.Transparency = 0.9;",
+                "desc": " "
+            }
+        },
+        {
+            "name": "Drawing Fonts",
+            "table": {
+                "headers": [
+                    "Font",
+                    "Number"
+                ],
+                "values": [
+                    [
+                        "UI",
+                        0
+                    ],
+                    [
+                        "System",
+                        1
+                    ],
+                    [
+                        "Plex",
+                        2
+                    ],
+                    [
+                        "Monospace",
+                        3
+                    ]
+                ]
+            }
+        },
+        {
+            "name": "Square",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "Vector2",
+                        "Position"
+                    ],
+                    [
+                        "Vector2",
+                        "Size"
+                    ],
+                    [
+                        "Color3",
+                        "Color"
+                    ],
+                    [
+                        "float",
+                        "Thickness"
+                    ],
+                    [
+                        "float",
+                        "Transparency"
+                    ],
+                    [
+                        "bool",
+                        "Filled"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": " ",
+            "code": {
+                "def": "square = Drawing.new('Square');\nsquare.Position = Vector2.new(20, 20);\nsquare.Size = Vector2.new(20, 20); -- pixels offset from .Position\nsquare.Thickness = 2;\nsquare.Color = Color3.fromRGB(255, 255, 255);\nsquare.Filled = true;\nsquare.Transparency = 0.9;",
+                "desc": " "
+            }
+        },
+        {
+            "name": "Circle",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "Vector2",
+                        "Position"
+                    ],
+                    [
+                        "Color3",
+                        "Color"
+                    ],
+                    [
+                        "float",
+                        "Radius"
+                    ],
+                    [
+                        "float",
+                        "Thickness"
+                    ],
+                    [
+                        "float",
+                        "Transparency"
+                    ],
+                    [
+                        "bool",
+                        "Filled"
+                    ],
+                    [
+                        "int",
+                        "Numsides"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": " ",
+            "code": {
+                "def": "circle = Drawing.new('Circle');\ncircle.Radius = 50;\ncircle.Color = Color3.fromRGB(255, 255, 255);\ncircle.Filled = false;\ncircle.NumSides = 32; -- Circles aren't drawn perfectly; more 'sides' = more lag\ncircle.Position = Vector2.new(20, 20); -- pixels offset from top right\ncircle.Transparency = 0.9;",
+                "desc": " "
+            }
+        },
+        {
+            "name": "Triangle",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "Vector2",
+                        "PointA"
+                    ],
+                    [
+                        "Vector2",
+                        "PointB"
+                    ],
+                    [
+                        "Vector2",
+                        "PointC"
+                    ],
+                    [
+                        "Color3",
+                        "Color"
+                    ],
+                    [
+                        "float",
+                        "Thickness"
+                    ],
+                    [
+                        "float",
+                        "Transparency"
+                    ],
+                    [
+                        "bool",
+                        "Filled"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": " ",
+            "code": {
+                "def": "triangle = Drawing.new('Triangle'); \ntriangle.PointA = Vector2.new(50, 0);\ntriangle.PointB = Vector2.new(0, 50);\ntriangle.PointC = Vector2.new(100, 50);\ntriangle.Thickness = 3;\ntriangle.Color = Color3.new(1, 0, 0);\ntriangle.Filled = true;\ntriangle.Transparency = 1.0;",
+                "desc": " "
+            }
+        },
+        {
+            "name": "Quad",
+            "table": {
+                "headers": [
+                    "Type",
+                    "Name"
+                ],
+                "values": [
+                    [
+                        "Vector2",
+                        "PointA"
+                    ],
+                    [
+                        "Vector2",
+                        "PointB"
+                    ],
+                    [
+                        "Vector2",
+                        "PointC"
+                    ],
+                    [
+                        "Vector2",
+                        "PointD"
+                    ],
+                    [
+                        "Color3",
+                        "Color"
+                    ],
+                    [
+                        "float",
+                        "Thickness"
+                    ],
+                    [
+                        "float",
+                        "Transparency"
+                    ],
+                    [
+                        "bool",
+                        "Filled"
+                    ]
+                ]
+            }
+        },
+        {
+            "name": " ",
+            "code": {
+                "def": "quad = Drawing.new('Quad');\nquad.Color = Color3.new(.1, .2, .3);\nquad.Filled = false;\nquad.Thickness = 2;\nquad.PointA = Vector2.new(100, 0);\nquad.PointB = Vector2.new(50, 50);\nquad.PointC = Vector2.new(0, 100);\nquad.PointD = Vector2.new(100, 100);\nquad.Transparency = 0.69;",
+                "desc": " "
+            }
+        }
+    ]
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="boxicons_2.0.7/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="canonical" href="https://oxygenu.xyz/index_php.html" />
+</head>
+<body>
+    <div class="container-1">
+        <div class="hero">
+            <div class="navbar">
+                <img src="res/peekclientlol.png" href="/">
+                <ul>
+                    <li>
+                        <a href="#services" id="a-services">
+                            Services
+                        </a>
+                    </li>
+                    <li>
+                        <a href="docs.html">
+                            Documentation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="discord.html" target="_blank">
+                            Support
+                        </a>
+                    </li>
+                    <li>
+                        <a href="download/index.html">
+                            Infomation
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="overlay">
+                <h1>PEEK</h1>
+                <h2>Simple & Undetected</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-2">
+        <div class="services">
+            <div class="card">
+                <i class="bx bxs-meteor"></i>
+                <span>Execution Power</span>
+                <div></div>
+                <p>We have developed a vast amount of custom functions to achieve high script support.</p>
+            </div>
+            <div class="card">
+                <i class="bx bxs-bolt"></i>
+                <span>Speed</span>
+                <div></div>
+                <p>PEEKCHEAT is highly optimized to ensure performance & capability.</p>
+            </div>
+            <div class="card">
+                <i class="bx bxs-hide"></i>
+                <span>Undetected</span>
+                <div></div>
+                <p>We provide you with high qualtiy undetected exploit to ensure your satiscation & experience.</p>
+            </div>
+            <div class="card">
+                <i class="bx bxs-timer"></i>
+                <span>24/7 Up-Time</span>
+                <div></div>
+                <p>We ensure your satisfcation & experience with our 24/7 up-time.</p>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        Copyright © PEEKTEAM 2021-2022
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script lang="text/javascript">
+    var link = document.getElementById("a-services");
+    var offsetTop = document.querySelector(".container-2 .services").offsetTop;
+    link.addEventListener("click", (event) => {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: (offsetTop * 25),
+        }, 800, () => {
+            window.location.hash = link.hash;
+        })
+    });
+    window.addEventListener("DOMContentLoaded", (event) => {
+        if (window.location.hash === "#services") {
+            $('html, body').animate({
+                scrollTop: offsetTop,
+            }, 100)
+        }
+    });
+</script>
+</html>
